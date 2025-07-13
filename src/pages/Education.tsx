@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap } from 'react-icons/fa';
 
 const fadeInStagger = {
   hidden: { opacity: 0, y: 30 },
