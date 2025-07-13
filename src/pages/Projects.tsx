@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaProjectDiagram, FaBrain } from 'react-icons/fa';
 
 const fadeInStagger = {
   hidden: { opacity: 0, y: 30 },
@@ -9,19 +8,19 @@ const fadeInStagger = {
 
 const projectList = [
   {
-    title: 'Retrieval-Augmented Generation (RAG) System for Robotics Information',
+    title: <span className="highlight">Retrieval-Augmented Generation (RAG) System for Robotics Information</span>,
     date: 'December 2024',
     details: [
-      { text: <>Built a <span className="highlight">RAG system</span> that scraped robotics-related GitHub repositories, stored embeddings in a vector database, and generated context-aware answers using a locally hosted <span className="highlight">LLaMA 3</span> model.</>, icon: <FaBrain className="proj-icon" /> },
-      { text: <>Developed using <span className="highlight">Python</span>, Qdrant, MongoDB, and Ollama.</>, icon: <FaProjectDiagram className="proj-icon" /> },
+      { text: <>Built a <span className="highlight">RAG system</span> that scraped robotics-related GitHub repositories, stored embeddings in a vector database, and generated context-aware answers using a locally hosted <span className="highlight">LLaMA 3</span> model.</>},
+      { text: <>Developed using <span className="highlight">Python</span>, <span className="highlight">Qdrant</span>, <span className="highlight">MongoDB</span>, and <span className="highlight">Ollama</span>.</>},
     ]
   },
   {
-    title: 'Deep Learning Image Classifier on CIFAR-10 Dataset',
+    title: <span className="highlight">Deep Learning Image Classifier on CIFAR-10 Dataset</span>,
     date: 'September 2024',
     details: [
-      { text: <>Constructed an image recognition model using <span className="highlight">CNNs</span> and regularization techniques, achieving <span className="highlight">82.34% accuracy</span>.</>, icon: <FaBrain className="proj-icon" /> },
-      { text: <>Developed in PyCharm using <span className="highlight">TensorFlow</span> and <span className="highlight">Keras</span>.</>, icon: <FaProjectDiagram className="proj-icon" /> },
+      { text: <>Constructed an image recognition model using <span className="highlight">CNNs</span> and regularization techniques, achieving <span className="highlight">82.34% accuracy</span>.</>},
+      { text: <>Developed in PyCharm using <span className="highlight">TensorFlow</span> and <span className="highlight">Keras</span>.</>},
     ]
   }
 ];
@@ -31,13 +30,12 @@ const Projects: React.FC = () => (
     <h2 className="skills-title">Projects</h2>
     <div className="proj-list-modern">
       {projectList.map((proj, i) => (
-        <motion.div className="project-card" key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.7 }} variants={fadeInStagger}>
-          <h3>{proj.title}</h3>
+        <motion.div className="project-card" key={i} custom={i} initial="hidden" animate="visible" variants={fadeInStagger}>
+          <h3 className="proj-title">{proj.title}</h3>
           <span>{proj.date}</span>
           <ul>
             {proj.details.map((item, j) => (
-              <motion.li key={j} className="proj-item-modern" custom={j} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.7 }} variants={fadeInStagger}>
-                {item.icon}
+              <motion.li key={j} className="proj-item-modern" custom={j} initial="hidden" animate="visible" variants={fadeInStagger}>
                 <span className="skill-label">{item.text}</span>
               </motion.li>
             ))}

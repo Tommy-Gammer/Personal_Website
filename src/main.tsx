@@ -12,7 +12,7 @@ import Hobbies from './pages/Hobbies';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Personal_Website/">
       <Routes>
         <Route path="/" element={<App />}> {/* Layout wrapper */}
           <Route index element={<Home />} />

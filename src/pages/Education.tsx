@@ -9,21 +9,21 @@ const fadeInStagger = {
 
 const educationList = [
   {
-    school: 'New Jersey Institute of Technology',
+    school: <span className="highlight">New Jersey Institute of Technology</span>,
     location: 'Newark, New Jersey',
     degree: 'Bachelor of Science in Computer Science, May 2026',
     details: [
-      { text: <><span className="highlight">GPA: 3.8/4.0</span></>, icon: <FaGraduationCap className="edu-icon" /> },
-      { text: <>Relevant Coursework: <span className="highlight">Artificial Intelligence</span>, <span className="highlight">Machine Learning</span>, Data Structures, Intensive Programming in Linux</>, icon: <FaGraduationCap className="edu-icon" /> },
+      { text: <><span className="highlight">GPA: 3.8/4.0</span></>},
+      { text: <>Relevant Coursework: <span className="highlight">Artificial Intelligence</span>, <span className="highlight">Machine Learning</span>, Data Structures, Intensive Programming in Linux</>},
     ]
   },
   {
-    school: 'Bergen Community College',
+    school: <span className="highlight">Bergen Community College</span>,
     location: 'Paramus, New Jersey',
     degree: 'Associates of Science in Computer Science, May 2024',
     details: [
-      { text: <><span className="highlight">GPA: 3.8/4.0</span></>, icon: <FaGraduationCap className="edu-icon" /> },
-      { text: <>Relevant Coursework: Linear Algebra, Discrete Math</>, icon: <FaGraduationCap className="edu-icon" /> },
+      { text: <><span className="highlight">GPA: 3.8/4.0</span></>},
+      { text: <>Relevant Coursework: Linear Algebra, Discrete Math</>},
     ]
   }
 ];
@@ -40,7 +40,6 @@ const Education: React.FC = () => (
           <ul>
             {edu.details.map((item, j) => (
               <motion.li key={j} className="edu-item-modern" initial="hidden" animate="visible" variants={fadeInStagger}>
-                {item.icon}
                 <span className="skill-label">{item.text}</span>
               </motion.li>
             ))}

@@ -24,8 +24,7 @@ const Skills: React.FC = () => (
           className="skill-item"
           custom={i}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.7 }}
+          animate="visible"
           variants={fadeInStagger}
         >
           {skill.icon}
