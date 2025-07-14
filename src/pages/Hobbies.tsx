@@ -10,7 +10,7 @@ const fadeInStagger = {
 const hobbies = [
   { text: 'Varsity crew competitor, state finals placement', icon: <FaTrophy className="hobby-icon" /> },
   { text: 'Play guitar, piano, and ukulele', icon: <FaMusic className="hobby-icon" /> },
-  { text: 'Enjoy sports: pickleball, spikeball, tennis, rowing, bowling', icon: <FaDumbbell className="hobby-icon" /> },
+  { text: 'Enjoy sports: pickleball, spikeball, tennis, rowing, bowling, hiking', icon: <FaDumbbell className="hobby-icon" /> },
 ];
 
 const Hobbies: React.FC = () => (
@@ -23,12 +23,11 @@ const Hobbies: React.FC = () => (
           className="hobby-item-modern"
           custom={i}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.7 }}
+          animate="visible"
           variants={fadeInStagger}
         >
-          {hobby.icon}
           <span className="skill-label">{hobby.text}</span>
+          <span className="hobby-icon">{hobby.icon}</span>
         </motion.li>
       ))}
     </ul>
